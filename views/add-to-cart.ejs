@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Add to Cart</title></head>
+<body>
+  <h1>Add Product to Cart</h1>
+  <form action="/add-to-cart" method="POST">
+    <input type="number" name="product_id" placeholder="Enter Product ID" required>
+    <button type="submit">Add</button>
+  </form>
+  <a href="/products">Back to Products</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add to Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    form {
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <form action="/add-to-cart" method="POST">
+    <h2>Add to Cart</h2>
+
+    <label for="product_id">Product ID:</label>
+    <input type="number" name="product_id" id="product_id" required min="1" />
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" id="quantity" required min="1" />
+
+    <button type="submit">Add to Cart</button>
+
+    <a href="/dashboard">← Back to Dashboard</a>
+  </form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: green;
+      font-size: 32px;
+    }
+
+    .summary {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Order Confirmed!</h1>
+  <h2>Thank you fot your order! Your order has been successfully placed</h2>
+
+  <div class="summary">
+    <p><strong>Order ID:</strong> <%= order.order_id %></p>
+    <p><strong>Order Date:</strong> <%= order.order_date.toLocaleString() %></p>
+    <p><strong>Total Amount:</strong> ₹<%= order.total_amount %></p>
+  </div>
+
+  <h2>Items in Your Order</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price (₹)</th>
+        <th>Total Price (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.product_id %></td>
+          <td><%= item.product_name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.price %></td>
+          <td><%= item.quantity * item.price %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <a href="/dashboard">← Back to Dashboard</a>
+
+</body>
+</html>

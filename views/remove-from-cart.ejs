@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove from Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    form {
+      border: 1px solid #ccc;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    input[type="number"] {
+      padding: 8px;
+    }
+    button {
+      padding: 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c82333;
+    }
+    .message {
+      text-align: center;
+      margin-top: 20px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/remove-from-cart" method="POST">
+    <h2>Remove Product from Cart</h2>
+
+    <label for="product_id">Product ID:</label>
+    <input type="number" name="product_id" id="product_id" required min="1">
+
+    <button type="submit">Remove</button>
+
+    <a href="/dashboard">← Back to Dashboard</a>
+  </form>
+</body>
+</html>
